@@ -1,6 +1,7 @@
 package com.bima.mycustomview
 
 import android.content.Context
+import android.graphics.Canvas
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatButton
 
@@ -15,5 +16,9 @@ class MyButton : AppCompatButton {
 
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
 
+    }
+
+    override fun onDraw(canvas: Canvas?) {
+        super.onDraw(canvas)
     }
 }
