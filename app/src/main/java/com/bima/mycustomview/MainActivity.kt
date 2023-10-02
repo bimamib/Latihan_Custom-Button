@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable) {
 
             }
-
         })
     }
 
