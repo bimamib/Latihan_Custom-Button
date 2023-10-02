@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-
+                setMyButtonEnable()
             }
 
             override fun afterTextChanged(s: Editable) {
@@ -38,5 +39,7 @@ class MainActivity : AppCompatActivity() {
     private fun setMyButtonEnable() {
         val result = myEditText.text
         myButton.isEnabled = result != null && result.toString().isNotEmpty()
+
+        myButton.setOnClickListener { Toast.makeText(this@MainActivity, myEditText.text, Toast.LENGTH_SHORT).show() }
     }
 }
