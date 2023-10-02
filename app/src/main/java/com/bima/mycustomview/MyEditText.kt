@@ -1,6 +1,7 @@
 package com.bima.mycustomview
 
 import android.content.Context
+import android.graphics.Canvas
 import android.graphics.drawable.Drawable
 import android.text.Editable
 import android.text.TextWatcher
@@ -24,6 +25,12 @@ class MyEditText : AppCompatEditText, View.OnTouchListener {
 
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
         init()
+    }
+
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        hint = "Masukkan nama Anda"
+        textAlignment = View.TEXT_ALIGNMENT_VIEW_START
     }
 
     private fun init() {
