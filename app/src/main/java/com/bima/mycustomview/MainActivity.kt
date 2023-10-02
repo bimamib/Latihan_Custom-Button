@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         setMyButtonEnable()
 
-        myEditText.addTextChangedListener(object : TextWatcher{
+        myEditText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
 
             }
@@ -39,6 +39,12 @@ class MainActivity : AppCompatActivity() {
         val result = myEditText.text
         myButton.isEnabled = result != null && result.toString().isNotEmpty()
 
-        myButton.setOnClickListener { Toast.makeText(this@MainActivity, myEditText.text, Toast.LENGTH_SHORT).show() }
+        myButton.setOnClickListener {
+            Toast.makeText(
+                this@MainActivity,
+                myEditText.text,
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 }
